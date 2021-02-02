@@ -1,0 +1,65 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- deny:
+    use_entities: []
+- bot_challenge:
+    use_entities: []
+- affirm
+- market_data
+- stock_data
+- portfolio_data
+- ref_data
+- sector_data
+- nlu_fallback
+
+entities:
+- question_type
+- context
+- context_name
+- asset_data
+- timeframe
+- direction
+- time
+- number
+- relative_strength
+- relative_timeframe
+- action
+- from
+- to
+
+slots:
+  question_type:
+    type: text
+    influence_conversation: false
+  context:
+    type: text
+    initial_value: "market"
+    influence_conversation: false
+  asset_data:
+    type: text
+    initial_value: "returns"
+    influence_conversation: false
+  direction:
+    type: text
+    initial_value: "neutral"
+    influence_conversation: false
+  timeframe:
+    type: text
+    initial_value: "today"
+    influence_conversation: false
+  relative_timeframe:
+    type: text
+    initial_value: "past"
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
