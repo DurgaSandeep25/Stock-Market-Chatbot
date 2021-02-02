@@ -1,0 +1,246 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hey there
+    - Hi there
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hey!
+    - Hi Tenjin
+    - Hello Tenjin
+    - Howdy Tenjin
+    - Hey Tenjin
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Sure, go ahead
+    - Yes, Go ahead
+    - Sure
+    - Yep!
+    - Yup
+    - Go ahead
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Not Sure
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- synonym: returns
+  examples: |
+    - return
+    - total return
+    - CAGR
+    - AAR
+    - ROI
+    - return on investment
+    - doing
+    - performance
+    - happening
+    - performing
+    - financial return
+    - financial returns
+
+- synonym: market
+  examples: |
+    - dow
+    - s&p
+    - russel
+    - stock market
+    - dow jones
+
+- synonym: spike
+  examples: |
+    - increase
+    - move up
+    - appreciate
+    - rise
+    - increasing
+    - rising
+    - rises
+    - increases
+    - moving up
+    - growing
+
+- synonym: crash
+  examples: |
+    - drop
+    - fall
+    - move down
+    - depreciate
+    - moving down
+    - sudden drop
+    - sudden fall
+    - falling
+    
+- synonym: shares
+  examples: |
+    - stock
+    - equities
+    - number of units
+
+- synonym: notify
+  examples: |
+    - alert
+    - text
+
+
+- synonym: portfolio
+  examples: |
+    - account
+    - accountid
+
+- synonym: past
+  examples: |
+    - previous
+    - last
+    - back
+    - ago
+    - before
+
+- lookup: context_name
+  examples: |
+    - Acasti Pharma
+    - American Airlines
+    - Alphabet
+    - Amazon
+    - AAPL
+    - AMZN
+    - AAL
+    - Google
+    - ACEV
+    - ACST
+    - ADXS
+    - AIKI
+    - AMD
+    - TSLA
+    - Tesla
+    - Aaple
+
+- intent: market_data
+  examples: |
+    - [how](question_type) is the [market](context) [doing](asset_data) today
+    - [how](question_type) was [dow](context) [performing](asset_data) yesterday
+    - [Did](question_type) the [market](context) [go up](direction) today
+    - [How](question_type) much has the [s&p](context) [dropped](direction) today 
+    - [Give me](question_type) today's [market](context) [performance](asset_data)
+    - [why](question_type) is [s&p](context) [down](direction)
+    - [why](question_type) is [market](context) [rising](direction) today
+    - [Give me](question_type) a [market](context) summary
+    - [why](question_type) is [dow jones](context) [falling](direction) the previous day
+    - [Where](question_type) is [Dow](context) today
+    - [what](question_type) is [happening](asset_data) in the [stock market](context) today?
+    - [what](question_type) [happened](asset_data) yesterday in the [market](context)?
+
+# does really having doing, performing, comes under asset_data, cannot we have any other entity.
+# if examples like what is happening in the market today. happening is more of like action, isnt it?
+- intent: stock_data
+  examples: |
+    - [How](question_type) is [AMZN](context_name) [performing](asset_data) today
+    - [Where](question_type) is [Dow](context) today
+    - [Did](question_type) [Google](context_name) go [up](direction) today
+    - [what](question_type) [happened](asset_data) to [AAPL](context_name) yesterday?
+    - [Is](question_type) the [market](context) [up or down](direction) today
+    - [what](question_type) is the [year to date](timeframe) [returns](asset_data) of [AIKI](context_name)
+    - [what](question_type) is the [previous](relative_timeframe) 2 month [performance](asset_data) of [Google](context_name)
+    - [what](question_type) is the [returns](asset_data) of [TSLA] over the [last](relative_timeframe) 2 weeks
+    - [what](question_type) is the [price](asset_data) for [AIKI](context_name)
+    - [what](question_type) is the [52-week high](asset_data) for [Aaple](context_name)
+    - [what](question_type) is the [return](asset_data) of [AMZN](context_name) from Jan 12th, 2020 till today
+    - [what](question_type) [return](asset_data) did [ACST](context_name) give over the [last](relative_timeframe) one year
+    - [what](question_type) is the [news](asset_data) of [Alphabet](context_name)
+    - [what](question_type) was the [earnings](asset_data) of [AAL](context_name) one year [ago](relative_timeframe)
+    - [Why](question_type) is [AMZN](context_name) [rising](direction) today?
+    - [What](question_type) is the reason for [spike](direction) of [TSLA](context_name) stock today?
+    - [what](question_type) is the [YTD](timeframe) [returns](asset_data) of [ADXS](context_name)?
+
+- intent: portfolio_data
+  examples: |
+    - [what](question_type) is the [performance](asset_data) of my [portfolios](context)
+    - [what](question_type) do you [think](action) of my [portfolio](context)
+    - [what](question_type) action do you [suggest](action) on my [portfolio](context)
+    - [what](question_type) action do you [recommend](action) on my [portfolio](context)
+    - [what](question_type) is the [total return](asset_data) of my [portfolio](context)
+    - [what](question_type) is the [YTD](timeframe) [return](asset_data) on my [portfolio](context)
+    - [does](question_type) [my portfolio](context) need [optimization](action)?
+    - [do](question_type) i need to [optimize](action) [my portfolio](action)?
+    - [what](question_type) should i know about [stocks](asset_data) in my [portfolio](context)
+    - [what](question_type) [news](asset_data) are there on my [holdings](context)
+    - [are](question_type) there any [stocks](asset_data) in my [portfolio](context) that I should [sell](action)
+# - [are](question_type) any of [my stocks](asset_data) rated [buy](action) by Tenjin
+
+- intent: ref_data
+  examples: |
+    - [which](question_type) [companies](context) have [earnings](asset_data) today
+    - [which](question_type) [companies](context) have [dividends](asset_data) this week
+    - [which](question_type) [companies](context) have [earnings](asset_data) this month
+    - [which](question_type) [companies](context) have [stock splits](asset_data) this month
+    - [when](question_type) was the [last](relative_timeframe) [split](asset_data) for [AAPL](context_name) 
+    - [when](question_type) was the [last](relative_timeframe) [dividend payout](asset_data) for [AMZN](context_name) 
+    - [when](question_type) is the [next](relative_timeframe) [dividend payout](asset_data) for [AAL](context_name) 
+    - [what](question_type) is the [p/e ratio](asset_data) for [TSLA](context_name) 
+    - [which](question_type) [stock](context) has [better](relative_strength) [p/e](asset_data) than [AMZN](context_name) 
+
+- intent: sector_data
+  examples: |
+    - [what](question_type) [sectors](context) are doing [well](relative_strength)
+    - [what](question_type) [sectors](context) are doing [bad](relative_strength)
+    - [what](question_type) [sectors](context) are [better](relative_strength) to [buy](action) 
+    - [what](question_type) are the [best](relative_strength) [performing](asset_data) [sector](context)
+    - [what](question_type) are the [good](relative_strength) [stocks](asset_data) in [Technology](sector_name) [sector](context)
+    - [why](question_type) [pharma](sector_name) [sector](context) is [falling](direction)
+
+
+# - intent: tenjin_rank
+#   examples: |
+#     - [what](question_type) is the [Tenjin rank](asset_data) for [AIKI](context_name)
+#     - [what](question_type) is the [Top](relative_strength) [ranked stock](context) suggested by Tenjin
+#     - [what](question_type) is the [Top](relative_strength) [10](number) [ETFs](context) in Tenjin
+#     - [which](question_type) [sector](context) should I be [investing](action) in
+
+# - intent: sentiments
+#   examples: |
+#     - [what](question_type) is the [Analyst estimate](context) for [AMZN](context_name)
+#     - [what](question_type) is the [Analyst sentiments](context) for [AMZN](context_name)
+#     - [what](question_type) is the [market sentiment](context) for [AMZN](context_name)
+#     - [what](question_type) is the [general market reaction](context) to [AMZN](context_name)
+
+
+#    - [which](question_type) [sectors](context) are predicted to have [good](relative_strength) [performance](asset_data)
+
+# can we use any thesaurus or wordnet to get the synonym words of these in financial sense?
+# AAR is also a ticker symbol, so this may cause ambigutiy
+#     - [What's](question_type) [latest news](context) on [AMZN](context_name)
+
+# changes
+# 1. Instead of merging technology, pharma into context name. We can create new entity called sector_name and
+# create own lookup table for this
+# 2. 

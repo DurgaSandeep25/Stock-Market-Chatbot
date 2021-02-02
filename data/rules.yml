@@ -1,0 +1,18 @@
+version: "2.0"
+
+rules:
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Implementation of the TwoStageFallbackPolicy
+  steps:
+  # This intent is automatically triggered by the `FallbackClassifier` in the NLU
+  # pipeline in case the intent confidence was below the specified threshold.
+  - intent: nlu_fallback
+  # The Fallback is now implemented as a form.
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback
+
