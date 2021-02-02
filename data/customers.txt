@@ -1,0 +1,22 @@
+Sample1
+Santhosh
+Shyam
+Nandan
+Sudeep
+Harsh
+Saye Saran
+deepika
+Sandeep
+Durga
+Sailaja
+Satyanarayana
+Sample2
+Sample3
+Sample4
+Sample5
+Cust1
+Cust2
+Cust3
+Cust4
+Cust5
+Cust6
